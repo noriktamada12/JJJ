@@ -418,7 +418,7 @@
         // =====================================
         // TEMPAT ISI API KEY OPENAI ANDA
         // =====================================
-        let API_KEY = '';  // Isi dengan API key Anda atau kosongkan untuk diisi lewat settings
+        let API_KEY = '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';  // Isi dengan API key Anda atau kosongkan untuk diisi lewat settings
         
         const messagesContainer = document.getElementById('messages');
         const messageInput = document.getElementById('messageInput');
@@ -514,14 +514,14 @@
             statusText.textContent = 'mengetik...';
 
             try {
-                const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                         'Authorization': `Bearer ${API_KEY}`
                     },
                     body: JSON.stringify({
-                        model: 'gpt-3.5-turbo',
+                        model: 'openai/gpt-3.5-turbo',
                         messages: [
                             {
                                 role: 'system',
